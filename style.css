@@ -5,7 +5,7 @@
 header{
 	max-width: 1000px;
   min-width: 800px;
-	text-align:center;
+
 }
 
 body {
@@ -16,44 +16,62 @@ body {
 	font-size: 35px;
   color: LightSeaGreen;
   background-color: white;
-
-	/* background-image: repeating-linear-gradient(-45deg, rgba(255,255,255,0.15),rgba(255,255,255,0.15) 5px, transparent 25px,transparent 25px),
-
-  repeating-linear-gradient(45deg, rgba(255,255,255,0.15),rgba(255,255,255,0.15) 7px,transparent 25px,transparent 25px),
-
-  linear-gradient(to bottom, white,  red); */
 }
 
 h1{
 	margin: auto;
 	font-size: 90px;
 	font-style: italic;
+	text-align:center;
 }
 
 h2{
 	font-family: "Lora", serif;
   color: CornflowerBlue;
-	/* font-style: italic; */
 }
 
 input {
+	align-items: center;
+	max-width: 800px;
+  min-width: 750px;
+	max-height: 90px;
+  min-height: 70px;
+  font-size: 30px;
+	font-family: "Roboto", sans-serif;
+	color: LightSeaGreen;
+}
+
+textarea{
+	max-width: 800px;
+  min-width: 600px;
+	max-height: 90px;
+  min-height: 70px;
   font-size: 30px;
 	font-family: "Roboto", sans-serif;
 	color: LightSeaGreen;
 }
 
 div{
+	color: LightSeaGreen;
 	padding: 20px;
 }
 
 a{
 	text-align:center;
 	margin-top: 100px;
+	margin-left: 190px;
 
-	border: 1px solid green;
+	/* border: 1px solid green; */
 	padding: 50px;
 	font-size: 40px;
-	color: pink;
+	color: lightPink;
+
+	animation: blury 2s ease-in-out infinite alternate-reverse;
+	/* animation: blinker 4s ease-in-out infinite alternate-reverse; */
+}
+
+a:hover{
+  /* animation: blury 2s ease-in-out infinite alternate-reverse; */
 }
 
 #form{
@@ -65,11 +83,14 @@ a{
 	color: royalBlue;
 }
 
-
 #answers{
-	border: 10px solid pink;
-	font-size:15px;
-	color:black;
+	/* line-height: 150px;
+	position: relative;
+	top: -580px; */
+	/* border: 10px solid pink; */
+	font-size: 30px;
+	font-family: "Roboto", sans-serif;
+	color: LightSeaGreen;
 }
 
 #buttons{
@@ -90,15 +111,73 @@ a{
 button{
 	padding: 20px;
 	border: CornflowerBlue outset 5px;
-	border-radius: 200px;
+	border-radius: 300px;
 	font-family: "Noto Sans TC", sans-serif;
 	font-size: 30px;
 	background-color: lavender;
-	color: pink;
+	color: lightPink;
 }
 
 #barcode{
+	position: relative;
+	left: -40px;
 	font-size: 70px;
 	color: CornflowerBlue;
 	font-family: "Libre Barcode 128", san-serif;
+}
+
+@keyframes blinker {
+  50% {
+    opacity: 0;
+
+    background: -webkit-linear-gradient(CornflowerBlue, lightPink);
+   -webkit-background-clip: text;
+   -webkit-text-fill-color: transparent;
+  }
+}
+
+@keyframes jumper {
+  0% {
+    filter: blur(1px);
+  }
+  100% {
+    filter: blur(0px);
+  }
+}
+
+@keyframes zoom {
+    0% {
+      transform: scale(.7);
+      filter: invert(0%);
+    }
+
+    50% {
+    filter: invert(100%);
+    }
+
+    100% {
+    transform: scale(1.5) translateY(100px);
+    filter: invert(0%);
+    }
+}
+
+@keyframes blury{
+    0% {
+        /* transform: rotate(0deg); */
+      border-radius: 20%;
+      filter: blur(0px) opacity(100%);
+    }
+    33% {
+        /* transform: rotate(180deg); */
+      filter: blur(2px) opacity(40%);
+      border-radius: 40%;
+    }
+    66% {
+      filter: blur(4px) opacity(50%);
+      border-radius: 60%;
+    }
+    100% {
+      filter: blur(0px) opacity(100%);
+      border-radius: 80%;;
+    }
 }

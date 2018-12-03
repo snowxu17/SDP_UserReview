@@ -1,16 +1,10 @@
 let canvas;
-let inp0;
-let inp1;
 let button;
 let gbutton;
 let database;
 
-let prompt;
-let note;
-
 let questions;
 let inputs = [];
-
 let buttons = [];
 
 let inputEntered = false;
@@ -32,7 +26,7 @@ function setup() {
     firebase.initializeApp( config );
     database = firebase.database();
 
-    questions = ["What's your name?", "Do you enjoy the Self-Discipline Pacifier?", "How do you feel after surviving the symbolic death?"];
+    questions = ["What's your name?", "What is your favorite moment of Self-Discipline Pacifier therapy?", "How do you feel after surviving the symbolic death?"];
 
     for (let i = 0; i < questions.length; i++)
     {
@@ -43,6 +37,14 @@ function setup() {
       input.parent("questions");
       inputs.push(input);
       // console.log(inputs.length);
+
+
+      // input = document.createElement('textarea', '');
+      // input.id = "questions";
+      // var bodyElement = document.body;
+      // bodyElement.appendChild(input);
+      // inputs.push(input);
+
     }
 
     createDiv();
@@ -51,17 +53,10 @@ function setup() {
     button.mousePressed( sendData );
     button.parent("buttons");
 
-    gbutton = createButton( 'Get');
-    gbutton.mousePressed( getData );
-    gbutton.parent("form");
-    gbutton.parent("buttons");
-
-    // note = "";
-    // prompt = document.createElement("div");
-    // prompt.textContent = note;
-    // prompt.id = "notes";
-    // var bodyElement = document.body;
-    // bodyElement.appendChild(prompt);
+    // gbutton = createButton( 'Get');
+    // gbutton.mousePressed( getData );
+    // gbutton.parent("form");
+    // gbutton.parent("buttons");
 }
 
 function draw() {
@@ -72,23 +67,27 @@ function sendData() {
 
     for (let i = 0; i < inputs.length; i++)
     {
-      if(inputs[i].value() == '')
+
+      if(inputs[i].value().trim() == '')
       {
         inputEntered = false;
+        break;
       }
 
-      if(inputs[i].value() !== '')
-      {
-        inputEntered = true;
-      }
+      // if(inputs[i].value().trim() == '')
+      // {
+      //   inputEntered = false;
+      // }
+      //
+      // if(inputs[i].value().trim() !== '' && inputs[1].value().trim() !== ''&& inputs[0].value().trim() !== '')
+      // {
+      //   inputEntered = true;
+      // }
     }
-
-    // note = "Thank you for sharing your experience!";
-    // prompt.textContent = note;
 
     if (inputEntered == false)
     {
-      alert("Please answer the survey to share your experience.");
+      alert("Please complete the survey to share your experience.");
     }
 
     if (inputEntered == true)
@@ -106,13 +105,14 @@ function sendData() {
       ref.push( data );
 
       alert("Thank you for sharing your experience!");
+
       inputEntered = false;
+
       for (let i = 0; i < inputs.length; i++)
       {
         inputs[i].value('');
       }
     }
-
 }
 
 function getData() {
@@ -153,8 +153,6 @@ function gotData(data) {
       createP(response.question2);
       createP(response.question3);
 
-      // console.log("getting length");
-      // console.log(response[0]);
 
       // for(let i = 0; i < response.length; i++)
       // {
@@ -170,6 +168,5 @@ function gotData(data) {
 
       // createDiv(response.question1);
       // createDiv(response.question2);
-
     }
 }

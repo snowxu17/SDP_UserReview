@@ -10,6 +10,7 @@ let a1;
 let a2;
 let a3;
 
+
 function setup() {
 
     // Initialize Firebase
@@ -27,14 +28,14 @@ function setup() {
     firebase.initializeApp( config );
     database = firebase.database();
 
-    questions = ["What's your name?", "Do you enjoy the Self-Discipline Pacifier?", "How do you feel after surviving the symbolic death?"];
+    questions = ["What's your name?", "What is your favorite moment of Self-Discipline Pacifier therapy?", "How do you feel after surviving the symbolic death?"];
 
     for (let i = 0; i < questions.length; i++)
     {
       let q = createP(questions[i]);
       q.parent("questions");
 
-      let a = createP('');
+      let a = createDiv('');
       a.parent("questions");
       answers.push(a);
 
@@ -42,9 +43,10 @@ function setup() {
 
     sbutton = createButton("Shuffle Review");
     sbutton.mousePressed(getData);
-    sbutton.parent("answers");
+    sbutton.parent("buttons");
 
     getData();
+
 
     a1 = createP('');
     a1.parent("answers");
@@ -79,7 +81,7 @@ function errData(error) {
 
 function gotData( data ) {
 
-  console.log( data );
+  // console.log( data );
 
   let responses = data.val();
 
@@ -87,17 +89,29 @@ function gotData( data ) {
   let keys = Object.keys( responses );
 
   let i = Math.floor(Math.random() * keys.length);
-  console.log(i);
+  console.log("random index is ", i);
 
   let key = keys[i];
   let response = responses[key];
 
-  a1.html(response.question1);
+  // a1.html(response.question1);
   answers[0].html(response.question1);
-  a2.html(response.question2);
+  // a2.html(response.question2);
   answers[1].html(response.question2);
-  a3.html(response.question3);
+  // a3.html(response.question3);
   answers[2].html(response.question3);
+
+  //// Tested putting answers in textbox
+  // for(let i = 0; i < answers.length; i++)
+  // {
+  //   answers[0].value(response.question1);
+  //   // a2.html(response.question2);
+  //   answers[1].value(response.question2);
+  //   // a3.html(response.question3);
+  //   answers[2].value(response.question3);
+  //
+  // }
+
 
 //// Print all answers at once
   // for ( let i = 0; i < keys.length; i++ ) {
