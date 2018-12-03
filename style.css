@@ -1,0 +1,104 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto');
+@import url('https://fonts.googleapis.com/css?family=Lora|Open+Sans');
+@import url('https://fonts.googleapis.com/css?family=Halant|Libre+Barcode+128|Noto+Sans+TC|Old+Standard+TT');
+
+header{
+	max-width: 1000px;
+  min-width: 800px;
+	text-align:center;
+}
+
+body {
+	max-width: 1000px;
+  min-width: 800px;
+	padding: 400px;
+	font-family: "Old Standard TT", sans-serif;
+	font-size: 35px;
+  color: LightSeaGreen;
+  background-color: white;
+
+	/* background-image: repeating-linear-gradient(-45deg, rgba(255,255,255,0.15),rgba(255,255,255,0.15) 5px, transparent 25px,transparent 25px),
+
+  repeating-linear-gradient(45deg, rgba(255,255,255,0.15),rgba(255,255,255,0.15) 7px,transparent 25px,transparent 25px),
+
+  linear-gradient(to bottom, white,  red); */
+}
+
+h1{
+	margin: auto;
+	font-size: 90px;
+	font-style: italic;
+}
+
+h2{
+	font-family: "Lora", serif;
+  color: CornflowerBlue;
+	/* font-style: italic; */
+}
+
+input {
+  font-size: 30px;
+	font-family: "Roboto", sans-serif;
+	color: LightSeaGreen;
+}
+
+div{
+	padding: 20px;
+}
+
+a{
+	text-align:center;
+	margin-top: 100px;
+
+	border: 1px solid green;
+	padding: 50px;
+	font-size: 40px;
+	color: pink;
+}
+
+#form{
+	/* border: 10px dotted blue; */
+}
+
+#questions{
+	/* border: 10px solid red; */
+	color: royalBlue;
+}
+
+
+#answers{
+	border: 10px solid pink;
+	font-size:15px;
+	color:black;
+}
+
+#buttons{
+	text-align:center;
+	margin-top: 80px;
+	padding: 50px;
+	/* border: 10px dotted green; */
+}
+
+#notes{
+	text-align:center;
+	position: relative;
+	top: -500px;
+	border: 10px solid pink;
+	color: orange;
+}
+
+button{
+	padding: 20px;
+	border: CornflowerBlue outset 5px;
+	border-radius: 200px;
+	font-family: "Noto Sans TC", sans-serif;
+	font-size: 30px;
+	background-color: lavender;
+	color: pink;
+}
+
+#barcode{
+	font-size: 70px;
+	color: CornflowerBlue;
+	font-family: "Libre Barcode 128", san-serif;
+}
