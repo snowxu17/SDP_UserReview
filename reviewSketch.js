@@ -3,7 +3,6 @@ let database;
 
 let sbutton;
 let questions;
-
 let answers = [];
 
 let a1;

@@ -7,7 +7,7 @@ let questions;
 let inputs = [];
 let buttons = [];
 
-let inputEntered = false;
+let inputEntered = true;
 
 function setup() {
 
@@ -67,22 +67,12 @@ function sendData() {
 
     for (let i = 0; i < inputs.length; i++)
     {
+      console.log(inputs[i].value().trim());
 
       if(inputs[i].value().trim() == '')
       {
         inputEntered = false;
-        break;
       }
-
-      // if(inputs[i].value().trim() == '')
-      // {
-      //   inputEntered = false;
-      // }
-      //
-      // if(inputs[i].value().trim() !== '' && inputs[1].value().trim() !== ''&& inputs[0].value().trim() !== '')
-      // {
-      //   inputEntered = true;
-      // }
     }
 
     if (inputEntered == false)
@@ -106,13 +96,13 @@ function sendData() {
 
       alert("Thank you for sharing your experience!");
 
-      inputEntered = false;
-
       for (let i = 0; i < inputs.length; i++)
       {
         inputs[i].value('');
       }
     }
+
+    inputEntered = true;
 }
 
 function getData() {
