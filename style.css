@@ -32,6 +32,10 @@ h1{
 	font-size: 90px;
 	font-style: italic;
 	text-align:center;
+	text-shadow: 3px 3px SeaGreen;
+
+	border: 10px inset white;
+	border-bottom: 20px double white;
 }
 
 h2{
@@ -139,18 +143,11 @@ button{
 	margin-top: 150px;
 	text-align: center;
 	align-content: center;
+	font-family: "Lora", serif;
 	font-size: 15px;
 	font-style: italic;
-}
-
-@keyframes blinker {
-  50% {
-    opacity: 0;
-
-    background: -webkit-linear-gradient(CornflowerBlue, lightPink);
-   -webkit-background-clip: text;
-   -webkit-text-fill-color: transparent;
-  }
+	border: 6px outset white;
+	text-shadow: 1px 1px SeaGreen;
 }
 
 @keyframes jumper {
