@@ -27,7 +27,7 @@ function setup() {
     firebase.initializeApp( config );
     database = firebase.database();
 
-    questions = ["What's your name?", "What is your favorite moment of Self-Discipline Pacifier therapy?", "How do you feel after surviving the symbolic death?"];
+    questions = ["What’s your name? Enter N/A for anonymity.", "How long (approximately) was your Self-Discipline Pacifier therapy session?", "How likely is it that you would recommend Self-Discipline Pacifier (SDP) to others? Rate 1 to 10.", "What sensations are most important to you during Self-Discipline Pacifier therapy?", "Would you repeat the Self-Discipline Pacifier therapy session? Why?", "Do you think Self-Discipline Pacifier therapy is painful? Or pleasant?", "How does the Self-Discipline Pacifier therapy resonate with or challenge your ideas of pain/pleasure?", "How does the Self-Discipline Pacifier therapy resonate with or challenge your ideas of suicide?", "How do you imagine the experience of death? And how would you like to experience death?", "How does your imagination of death affects your ways of living?", "How can we improve the therapy experience to help you cope with self-harming intents?", "How can you improve your coping strategy for proactive self-healing and self-growth?"];
 
     for (let i = 0; i < questions.length; i++)
     {
@@ -99,6 +99,24 @@ function gotData( data ) {
   answers[1].html(response.question2);
   // a3.html(response.question3);
   answers[2].html(response.question3);
+
+  answers[3].html(response.question4);
+
+  answers[4].html(response.question5);
+
+  answers[5].html(response.question6);
+
+  answers[6].html(response.question7);
+
+  answers[7].html(response.question8);
+
+  answers[8].html(response.question9);
+
+  answers[9].html(response.question10);
+
+  answers[10].html(response.question11);
+
+  answers[11].html(response.question12);
 
   //// Tested putting answers in textbox
   // for(let i = 0; i < answers.length; i++)
