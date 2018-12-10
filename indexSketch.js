@@ -105,8 +105,7 @@ function sendData() {
           question9: inputs[8].value(),
           question10: inputs[9].value(),
           question11: inputs[10].value(),
-          question12: inputs[11].value(),
-          question13: inputs[12].value()
+          question12: inputs[11].value()          
       }
 
       console.log( data );
